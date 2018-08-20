@@ -1,23 +1,51 @@
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class AppActivity2 extends JFrame {
-
+public class AppActivity2 extends JFrame implements ActionListener {
+	JButton tetapan, cari, terus;
+	JTextField carian, tajuk;
+	
 	public AppActivity2() {
 		// TODO Auto-generated constructor stub
 		Container pane = getContentPane();
 		
-		JButton tetapan = new JButton("Tetapan");
+		// try build the layout on MainFrame only, this is just for test view
+		setLayout(new FlowLayout());
+		setSize(500, 500);
+		setLocation(500, 100);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		
+		// try build a separate module or component for settings and search bar
+		tetapan = new JButton("Tetapan");
 		pane.add(tetapan);
-		JTextField cari = new JTextField("Cari...");
+		// tetapan.addActionListener(arg0);
+		carian = new JTextField("Cari...");
+		pane.add(carian);
+		cari = new JButton("Cari");
 		pane.add(cari);
+		// cari.addActionListener(arg0);
 		
 		pane.add(new JLabel("Langkah 1..."));
 		pane.add(new JLabel("Apa tajuk sesi meetup anda?"));
-		JTextField tajuk = new JTextField(30);
+		tajuk = new JTextField(30);
 		pane.add(tajuk);
-		JButton terus = new JButton("Seterusnya");
+		terus = new JButton("Seterusnya");
 		pane.add(terus);
+		terus.addActionListener(this);
+		
 	}
-
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	// for testing purpose
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new AppActivity2();
+	}
 }
