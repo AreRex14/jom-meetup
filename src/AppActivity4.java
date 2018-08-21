@@ -6,7 +6,8 @@ import java.awt.event.ActionListener;
 public class AppActivity4 extends JFrame implements ActionListener {
 	JButton tetapan, cari, terus;
 	JTextField carian;
-	// add textarea component for meetup desc
+	JTextArea penerangan;
+	// add JLabel to view JTextArea output characters count
 	
 	public AppActivity4() {
 		// TODO Auto-generated constructor stub
@@ -31,15 +32,30 @@ public class AppActivity4 extends JFrame implements ActionListener {
 		
 		pane.add(new JLabel("Langkah 3..."));
 		pane.add(new JLabel("Terangkan siapa patut sertai dan apa aktiviti yang dirancang?"));
-		// add a text area for user to insert meetup long description
+		penerangan = new JTextArea(15,30);
+		pane.add(penerangan); 
 		JButton terus = new JButton("Seterusnya");
 		pane.add(terus);
 		terus.addActionListener(this);
 	}
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		Object obj = e.getSource();
+
+		if (obj == tetapan) {
+			
+		}
+		else if (obj == cari) {
+			
+		}
+		else {
+			// text area
+			String text=penerangan.getText();   
+		    // l2.setText("Characters: "+text.length()); for characters count
+			// need to notify user if characters count are not enough
+		}
+		  
 	}
 	
 	// for testing purpose

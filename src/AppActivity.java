@@ -33,9 +33,20 @@ public class AppActivity extends JFrame implements ActionListener{
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		Object obj = e.getSource();
+
+		if (obj == tetapan) {
+			
+		}
+		else if (obj == cari) {
+			
+		}
+		else {
+			
+		}
+
 	}
 	// for testing purpose
 	public static void main(String[] args) {

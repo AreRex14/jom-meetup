@@ -1,11 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+// import java.awt.event.ItemEvent;
 import java.awt.event.ActionListener;
 
 public class AppActivity3 extends JFrame implements ActionListener{
 	JButton tetapan, cari, terus;
 	JTextField carian;
+	JComboBox makmalInput;
 	// add list component for lab selection
 	
 	public AppActivity3() {
@@ -31,7 +33,11 @@ public class AppActivity3 extends JFrame implements ActionListener{
 		
 		pane.add(new JLabel("Langkah 2..."));
 		pane.add(new JLabel("Di mana lokasi sesi anda?"));
-		// add list of lab locations to book
+		
+		String makmal[] = {"mk1","mk2","mk3","mk4","mk5"};
+		makmalInput = new JComboBox(makmal);
+		pane.add(makmalInput);
+		
 		terus = new JButton("Seterusnya");
 		pane.add(terus);
 		terus.addActionListener(this);
@@ -39,9 +45,20 @@ public class AppActivity3 extends JFrame implements ActionListener{
 	
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		Object obj = e.getSource();
+
+		if (obj == tetapan) {
+			
+		}
+		else if (obj == cari) {
+			
+		}
+		else {
+			String makmal  = (String) makmalInput.getItemAt(makmalInput.getSelectedIndex());
+		}
+		 
 	}
 	
 	// for testing purpose
