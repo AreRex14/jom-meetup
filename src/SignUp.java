@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 public class SignUp extends JFrame implements ActionListener {
 	JTextField fnameInput, lnameInput, emelInput;
+	JLabel emelStatus, passwordStatus, password2Status;
 	JPasswordField passwordInput, password2Input;
 	JButton daftar;
 	
@@ -36,16 +37,19 @@ public class SignUp extends JFrame implements ActionListener {
 		pane.add(emel);
 		emelInput = new JTextField(20);
 	    pane.add(emelInput);
+	    emelStatus = new JLabel("");
 	        
 		JLabel password = new JLabel("Kata laluan: ");
 		pane.add(password);
 		passwordInput = new JPasswordField(10);
 		pane.add(passwordInput);
+		passwordStatus = new JLabel("");
 		
 		JLabel password2 = new JLabel("Isi semula kata laluan: ");
 		pane.add(password2);
 		password2Input = new JPasswordField(10);
 		pane.add(password2Input);
+		password2Status = new JLabel("");
 		
 		daftar = new JButton("Daftar masuk");
 		pane.add(daftar);
@@ -65,6 +69,13 @@ public class SignUp extends JFrame implements ActionListener {
 			password  = passwordInput.getPassword();
 			password2  = password2Input.getPassword();
 		/*
+		 * need to validate email, password, password2 before executing JButton daftar event
+		 emelStatus.setText("Emel tidak sah");
+		 passwordStatus.setText("Kata laluan tidak menepati piawaian");
+		 password2Status.setText("Kata laluan tidak sama");
+		 
+		 // need to invoke a pop-up for failed sign up or stay at same windows with error message print out
+		 
            if ( )
           {
 

@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 public class VerifySignUp extends JFrame implements ActionListener {
 	JTextField kod;
+	JLabel status;
 	JButton sahkan;
 	
 	public VerifySignUp() {
@@ -28,12 +29,14 @@ public class VerifySignUp extends JFrame implements ActionListener {
 		sahkan = new JButton("Sahkan");
 		pane.add(sahkan);
 		sahkan.addActionListener(this);
+		
+		status = new JLabel("");
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		status.setText("Kod tidak sah");
 	}
 	
 	// for testing purpose
