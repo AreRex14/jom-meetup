@@ -30,7 +30,7 @@ public class AppActivity2 extends JFrame implements ActionListener {
 		
 		pane.add(new JLabel("Langkah 1..."));
 		pane.add(new JLabel("Apa tajuk sesi meetup anda?"));
-		tajuk = new JTextField(30);
+		tajuk = new JTextField("Jom belajar Java", 30);
 		pane.add(tajuk);
 		terus = new JButton("Seterusnya");
 		pane.add(terus);

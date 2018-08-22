@@ -51,8 +51,8 @@ public class AppActivity4 extends JFrame implements ActionListener {
 		}
 		else {
 			// text area
-			String text=penerangan.getText();   
-		    // l2.setText("Characters: "+text.length()); for characters count
+			String desc = penerangan.getText();   
+		    // l2.setText("Characters: "+desc.length()); for characters count
 			// need to notify user if characters count are not enough
 		}
 		  
