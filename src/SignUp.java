@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.*; // for String manipulation
 
 public class SignUp extends JFrame implements ActionListener {
 	JTextField fnameInput, lnameInput, emelInput;
@@ -25,17 +26,17 @@ public class SignUp extends JFrame implements ActionListener {
 		
 		JLabel fname = new JLabel("Nama pertama: ");
 	    pane.add(fname);
-        fnameInput = new JTextField(15);
+        fnameInput = new JTextField("Arif", 15);
         pane.add(fnameInput);
         
 		JLabel lname = new JLabel("Nama terakhir: ");
 		pane.add(lname);
-		lnameInput = new JTextField(15);
+		lnameInput = new JTextField("Tukiman", 15);
 	    pane.add(lnameInput);
 	    
 		JLabel emel = new JLabel("Emel: ");
 		pane.add(emel);
-		emelInput = new JTextField(20);
+		emelInput = new JTextField("example@email.com",20);
 	    pane.add(emelInput);
 	    emelStatus = new JLabel("");
 	        
@@ -68,6 +69,8 @@ public class SignUp extends JFrame implements ActionListener {
 			emel = emelInput.getText();
 			password  = passwordInput.getPassword();
 			password2  = password2Input.getPassword();
+			
+			emel = emel.toLowerCase();
 		/*
 		 * need to validate email, password, password2 before executing JButton daftar event
 		 emelStatus.setText("Emel tidak sah");
