@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 // import java.awt.event.ItemEvent;
 import java.awt.event.ActionListener;
 
-public class AppActivity3 extends JFrame implements ActionListener{
+public class AppActivity3 extends App implements ActionListener{
 	JButton tetapan, cari, terus;
 	JTextField carian;
 	JComboBox makmalInput;

@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AppActivity2 extends JFrame implements ActionListener {
+public class AppActivity2 extends App implements ActionListener {
 	JButton tetapan, cari, terus;
 	JTextField carian, tajuk;
 	

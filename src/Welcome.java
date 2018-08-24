@@ -3,7 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Welcome extends JFrame implements ActionListener{
+// public class Welcome extends JFrame implements ActionListener{ - this is before subclass
+public class Welcome extends App implements ActionListener{
 	JButton terus;
 	
 	public Welcome() {

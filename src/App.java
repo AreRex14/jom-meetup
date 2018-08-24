@@ -1,4 +1,4 @@
 
-public abstract class App {
+public abstract class App extends MainFrame {
 
 }

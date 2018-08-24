@@ -1,4 +1,5 @@
+import javax.swing.JFrame;
 
-public abstract class MainFrame {
+public abstract class MainFrame extends JFrame{
 
 }
