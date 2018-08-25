@@ -8,6 +8,8 @@ public class SignIn extends JFrame implements ActionListener{
 	JPasswordField passwordInput;
 	JButton masuk;
 	
+	private String email, pass; 
+	
 	public SignIn() {
 		// TODO Auto-generated constructor stub
 		Container pane = getContentPane();

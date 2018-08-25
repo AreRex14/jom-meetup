@@ -8,6 +8,8 @@ public class VerifySignUp extends JFrame implements ActionListener {
 	JLabel status;
 	JButton sahkan;
 	
+	private String code;
+	
 	public VerifySignUp() {
 		// TODO Auto-generated constructor stub
 		Container pane = getContentPane();

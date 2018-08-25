@@ -10,6 +10,8 @@ public class SignUp extends JFrame implements ActionListener {
 	JPasswordField passwordInput, password2Input;
 	JButton daftar;
 	
+	private String fName, lName, email, pass, pass2;
+	
 	public SignUp() {
 		// TODO Auto-generated constructor stub
 		Container pane = getContentPane();
