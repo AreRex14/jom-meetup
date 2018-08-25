@@ -12,29 +12,9 @@ public class AppActivity extends App implements ActionListener{
 	public AppActivity() {
 		Container pane = getContentPane();
 		
-		// try build the layout on MainFrame only, this is just for test view
-		/*
-		setLayout(new FlowLayout());
-		setSize(500, 500);
-		setLocation(500, 100);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-		*/
-		
-		// try build a separate module or component for settings and search bar
-		/*
-		tetapan = new JButton("Tetapan");
-		pane.add(tetapan);
-		// tetapan.addActionListener(arg0);
-		carian = new JTextField("Cari...");
-		pane.add(carian);
-		cari = new JButton("Cari");
-		pane.add(cari);
-		// cari.addActionListener(arg0);
-		*/
-		
 		mula = new JButton("Mulakan meetup baru");
 		pane.add(mula);
+		mula.setBounds(120, 100, 250, 30);
 		mula.addActionListener(this);
 	}
 	

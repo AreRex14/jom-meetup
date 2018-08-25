@@ -16,11 +16,17 @@ public class Welcome extends App implements ActionListener{
 		setVisible(true);
 		
 		//insert app logo here
-		pane.add(new JLabel("Jom Meetup"));
-		pane.add(new JLabel("Di sini permulaan perkongsian ilmu..."));
+		JLabel h1 = new JLabel("Jom Meetup");
+		h1.setBounds(210, 180, 150, 20);
+		pane.add(h1);
+		
+		JLabel h2 = new JLabel("Di sini permulaan perkongsian ilmu...");
+		h2.setBounds(140, 230, 300, 20);
+		pane.add(h2);
 		
 		terus = new JButton("Seterusnya");
 		pane.add(terus);
+		terus.setBounds(170, 280, 150, 30);
 		terus.addActionListener(this);
 	}
 

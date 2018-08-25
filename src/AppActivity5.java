@@ -13,35 +13,26 @@ public class AppActivity5 extends App implements ActionListener{
 		// TODO Auto-generated constructor stub
 		Container pane = getContentPane();
 		
-		// try build the layout on MainFrame only, this is just for test view
-		/*
-		setLayout(new FlowLayout());
-		setSize(500, 500);
-		setLocation(500, 100);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-		*/
+		JLabel step4 = new JLabel("Langkah 4...");
+		pane.add(step4);
+		step4.setBounds(50, 100, 200, 30);
 		
-		// try build a separate module or component for settings and search bar
-		/*
-		tetapan = new JButton("Tetapan");
-		pane.add(tetapan);
-		// tetapan.addActionListener(arg0);
-		carian = new JTextField("Cari...");
-		pane.add(carian);
-		cari = new JButton("Cari");
-		pane.add(cari);
-		// cari.addActionListener(arg0);
-		*/
-		
-		pane.add(new JLabel("Langkah 4..."));
-		pane.add(new JLabel("Apa maksud menjadi sebahagian daripada Meetup"));
+		JLabel d1 = new JLabel("Apa maksud menjadi sebahagian daripada Meetup");
+		pane.add(d1);
+		d1.setBounds(80, 130, 500, 30);
 		// add texts for Jom Meetup rules and values to be follow by organizer
-		pane.add(new JLabel("Ada peraturan anda sendiri? Sila nyatakan..."));
+		
+		// Below componnets not yet properly layout
+		JLabel d2 = new JLabel("Ada peraturan anda sendiri? Sila nyatakan...");
+		pane.add(d2);
+		d2.setBounds(90, 160, 200, 20);
 		peraturan = new JTextArea(15, 30);
 		pane.add(peraturan);
+		peraturan.setBounds(100, 180, 200, 20);
+		
 		JButton setuju = new JButton("Setuju dan teruskan");
 		pane.add(setuju);
+		setuju.setBounds(80, 330, 180, 30);
 		setuju.addActionListener(this);
 	}
 	

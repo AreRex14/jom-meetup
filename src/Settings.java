@@ -1,3 +1,4 @@
+import java.awt.Container;
 
 public class Settings extends App {
 	
@@ -5,6 +6,7 @@ public class Settings extends App {
 	
 	public Settings() {
 		// TODO Auto-generated constructor stub
+		Container pane = getContentPane();
 	}
 
 	public static void main(String[] args) {

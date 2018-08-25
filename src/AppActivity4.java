@@ -14,33 +14,20 @@ public class AppActivity4 extends App implements ActionListener {
 		// TODO Auto-generated constructor stub
 		Container pane = getContentPane();
 		
-		// try build the layout on MainFrame only, this is just for test view
-		/*
-		setLayout(new FlowLayout());
-		setSize(500, 500);
-		setLocation(500, 100);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-		*/
+		JLabel step3 = new JLabel("Langkah 3...");
+		pane.add(step3);
+		step3.setBounds(50, 100, 200, 30);
 		
-		// try build a separate module or component for settings and search bar
-		/*
-		tetapan = new JButton("Tetapan");
-		pane.add(tetapan);
-		// tetapan.addActionListener(arg0);
-		carian = new JTextField("Cari...");
-		pane.add(carian);
-		cari = new JButton("Cari");
-		pane.add(cari);
-		// cari.addActionListener(arg0);
-		*/
+		JLabel c1 = new JLabel("Terangkan siapa patut sertai dan apa aktiviti yang dirancang?");
+		pane.add(c1);
+		c1.setBounds(80, 130, 500, 30);
 		
-		pane.add(new JLabel("Langkah 3..."));
-		pane.add(new JLabel("Terangkan siapa patut sertai dan apa aktiviti yang dirancang?"));
 		penerangan = new JTextArea(15,30);
 		pane.add(penerangan); 
+		penerangan.setBounds(80, 160, 350, 150);
 		JButton terus = new JButton("Seterusnya");
 		pane.add(terus);
+		terus.setBounds(80, 330, 100, 30);
 		terus.addActionListener(this);
 	}
 	@Override

@@ -14,36 +14,22 @@ public class AppActivity3 extends App implements ActionListener{
 		// TODO Auto-generated constructor stub
 		Container pane = getContentPane();
 		
-		// try build the layout on MainFrame only, this is just for test view
-		/*
-		setLayout(new FlowLayout());
-		setSize(500, 500);
-		setLocation(500, 100);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-		*/
+		JLabel step2 = new JLabel("Langkah 2...");
+		pane.add(step2);
+		step2.setBounds(130, 100, 200, 30);
 		
-		// try build a separate module or component for settings and search bar
-		/*
-		tetapan = new JButton("Tetapan");
-		pane.add(tetapan);
-		// tetapan.addActionListener(arg0);
-		carian = new JTextField("Cari...");
-		pane.add(carian);
-		cari = new JButton("Cari");
-		pane.add(cari);
-		// cari.addActionListener(arg0);
-		*/
-		
-		pane.add(new JLabel("Langkah 2..."));
-		pane.add(new JLabel("Di mana lokasi sesi anda?"));
+		JLabel b1 = new JLabel("Di mana lokasi sesi anda?");
+		pane.add(b1);
+		b1.setBounds(150, 130, 250, 30);
 		
 		String makmal[] = {"mk1","mk2","mk3","mk4","mk5"};
 		makmalInput = new JComboBox(makmal);
 		pane.add(makmalInput);
+		makmalInput.setBounds(150, 160, 50, 30);
 		
 		terus = new JButton("Seterusnya");
 		pane.add(terus);
+		terus.setBounds(150, 210, 100, 30);
 		terus.addActionListener(this);
 	}
 	
