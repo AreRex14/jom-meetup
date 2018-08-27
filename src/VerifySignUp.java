@@ -4,11 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VerifySignUp extends MainFrame implements ActionListener {
-	JTextField kod;
-	JLabel status;
-	JButton sahkan;
-	
-	private String code;
+	// private JLabel status;
+	private JButton masuk;
 	
 	public VerifySignUp() {
 		// TODO Auto-generated constructor stub
@@ -22,26 +19,20 @@ public class VerifySignUp extends MainFrame implements ActionListener {
 		pane.add(h2);
 		h2.setBounds(75, 120, 500, 30);
 		
-		JLabel enter = new JLabel("Masukkan kod: ");
-		pane.add(enter);
-		enter.setBounds(205, 220, 150, 30);
+		masuk = new JButton("Log masuk");
+		pane.add(masuk);
+		masuk.setBounds(170, 300, 150, 30);
+		masuk.addActionListener(this);
 		
-		kod = new JTextField(6);
-		pane.add(kod);
-		kod.setBounds(145, 250, 200, 30);
-		
-		sahkan = new JButton("Sahkan");
-		pane.add(sahkan);
-		sahkan.setBounds(170, 300, 150, 30);
-		sahkan.addActionListener(this);
-		
-		status = new JLabel("");
+		// status = new JLabel("");
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		status.setText("Kod tidak sah");
+		// TODO Auto-generated method stub		
+		this.setVisible(false);
+		new SignIn().setVisible(true); // VerifySignUp Form to show after SignUp window
+		
 	}
 	
 	// for testing purpose
@@ -50,5 +41,4 @@ public class VerifySignUp extends MainFrame implements ActionListener {
 		new VerifySignUp();
 		
 	}
-
 }
