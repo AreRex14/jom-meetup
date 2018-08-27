@@ -2,15 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.*; // for String manipulation
+// import java.math.BigDecimal;
+// import java.util.*; // for String manipulation
+import java.sql.*;
 
 public class SignUp extends MainFrame implements ActionListener {
-	JTextField fnameInput, lnameInput, emelInput;
-	JLabel emelStatus, passwordStatus, password2Status;
-	JPasswordField passwordInput, password2Input;
-	JButton daftar;
+	private JTextField fnameInput, lnameInput, emelInput;
+	private JLabel emelStatus, passwordStatus, password2Status;
+	private JPasswordField passwordInput, password2Input;
+	private JButton daftar, masuk;
 	
-	private String fName, lName, email, pass, pass2;
+	protected String fName, lName, email, pass, pass2; // need to declare as private but database not set up yet, private attributes may not be accessible across other class in the same package 
 	
 	public SignUp() {
 		// TODO Auto-generated constructor stub
@@ -60,71 +62,99 @@ public class SignUp extends MainFrame implements ActionListener {
 		pane.add(password2Input);
 		password2Input.setBounds(200, 300, 250, 30);
 		password2Status = new JLabel("");
-		
+				
 		daftar = new JButton("Daftar masuk");
 		pane.add(daftar);
-		daftar.setBounds(170, 370, 150, 30);
+		daftar.setBounds(200, 350, 150, 30);
 		daftar.addActionListener(this);
-		//add line for user already sign up
+		
+		masuk = new JButton("Dah daftar! Log masuk sekarang...");
+		pane.add(masuk);
+		masuk.setBounds(200, 390, 200, 30);
+		masuk.addActionListener(this);
 	}
 	
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-			String fname, lname, emel;
-			char[] password, password2;
+		Object obj = e.getSource();
+
+		if (obj == daftar) {
+			fName = fnameInput.getText();
+			lName = lnameInput.getText();
+			email = emelInput.getText();
+			email = email.toLowerCase();
+			pass   = new String(passwordInput.getPassword());
+			pass2  = new String(password2Input.getPassword());
+				
+	        fnameInput.setText(fName);
+	        lnameInput.setText(lName);
+	        emelInput.setText(email);
+	        passwordInput.setText(pass);
+	        password2Input.setText(pass2);
+	     
+	        // masuk.setText("Anda telah didaftarkan. Yeay!"); window close too fast
+		
+	        this.setVisible(false);
+		    new VerifySignUp().setVisible(true); // VerifySignUp Form to show after SignUp window
+		}
+		else if (obj == masuk) {
+			 this.setVisible(false);
+			 new SignIn().setVisible(true); // VerifySignUp Form to show after SignUp window
+		}
+
+		
 			
-			fname = fnameInput.getText();
-			lname = lnameInput.getText();
-			emel = emelInput.getText();
-			password  = passwordInput.getPassword();
-			password2  = password2Input.getPassword();
+			/*
+			try {
+				Class.forName("org.h2.Driver").newInstance();
+			} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
-			emel = emel.toLowerCase();
+			try {
+				Connection con = DriverManager.getConnection("", "", "");
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			*/
+			
 		/*
 		 * need to validate email, password, password2 before executing JButton daftar event
 		 emelStatus.setText("Emel tidak sah");
 		 passwordStatus.setText("Kata laluan tidak menepati piawaian");
 		 password2Status.setText("Kata laluan tidak sama");
 		 
+		 if ( fName && lName && email && pass && pass2 )
+	          {
+
+	               try
+	              {
+
+	                  
+	               }
+	         catch (Exception ex)
+	               {
+
+	                   System.out.println(ex);
+
+	               }
+
+	           }
+	         else
+	          {
+
+	               JOptionPane.showMessageDialog(daftar, "");
+
+	           } 
+	           
 		 // need to invoke a pop-up for failed sign up or stay at same windows with error message print out
 		 
-           if ( )
-          {
-
-               try
-              {
-
-                  
-               }
-         catch (Exception ex)
-               {
-
-                   System.out.println(ex);
-
-               }
-
-           }
-         else
-          {
-
-               JOptionPane.showMessageDialog(daftar, "");
-
-           } 
-
-
-       
-
-           fnameInput.setText("");
-
-           lnameInput.setText("");
-
-           emelInput.setText("");
-
-           passwordInput.setText("");
-
-           password2Input.setText("");
+		 
+           
 	*/
+			
    } 
 	
 	// for testing purpose
@@ -133,6 +163,6 @@ public class SignUp extends MainFrame implements ActionListener {
 		new SignUp();
 		
 	}
- 
+	
 
 }
