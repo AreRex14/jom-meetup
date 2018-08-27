@@ -4,11 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SignIn extends MainFrame implements ActionListener{
-	JTextField emelInput;
-	JPasswordField passwordInput;
-	JButton masuk;
+	private JTextField emelInput;
+	private JPasswordField passwordInput;
+	private JButton masuk;
 	
-	private String email, pass; 
+	protected String email, pass; // need to declared as private for real
 	
 	public SignIn() {
 		// TODO Auto-generated constructor stub
@@ -43,6 +43,11 @@ public class SignIn extends MainFrame implements ActionListener{
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		 // need to invoke a pop-up for failed sign in or stay at same windows with error message print out
+		email = emelInput.getText();
+		pass  = new String(passwordInput.getPassword());
+		
+		this.setVisible(false);
+	    new AppActivity().setVisible(true);
 	}
 	
 	// for testing purpose

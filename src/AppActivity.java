@@ -14,7 +14,7 @@ public class AppActivity extends App implements ActionListener{
 		
 		mula = new JButton("Mulakan meetup baru");
 		pane.add(mula);
-		mula.setBounds(120, 100, 250, 30);
+		mula.setBounds(350, 100, 250, 30);
 		mula.addActionListener(this);
 	}
 	
@@ -24,13 +24,12 @@ public class AppActivity extends App implements ActionListener{
 		Object obj = e.getSource();
 
 		if (obj == tetapan) {
-			
-		}
-		else if (obj == cari) {
-			
+			this.setVisible(false);
+		    new Settings().setVisible(true);
 		}
 		else {
-			
+			this.setVisible(false);
+		    new AppActivity2().setVisible(true);
 		}
 
 	}

@@ -1,10 +1,10 @@
+import javax.swing.JFrame;
 
 public class MainActivity {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// need to create an instance to access attributes or methods
-		new Welcome();
+	public static void main(String[] args) throws Exception {
+		JFrame welcomeFrame = new Welcome();
+		
 		// new SignUp();
 		// new VerifySignUp();
 		// new SignIn();
