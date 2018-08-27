@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Welcome extends App implements ActionListener{
+public class Welcome extends MainFrame implements ActionListener{
 	JButton terus;
 	
 	public Welcome() {
@@ -33,12 +33,14 @@ public class Welcome extends App implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		 this.setVisible(false);
+	     new SignUp().setVisible(true); // Sign Up Form to show after Welcome window
 	}
 	
-	// for this window testing only
+	/* for this window testing only
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new Welcome();
 	}
+	*/
 }
