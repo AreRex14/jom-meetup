@@ -1,54 +1,46 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-// import java.awt.event.ItemEvent;
 import java.awt.event.ActionListener;
 
-public class AppActivity3 extends App implements ActionListener{
-	JButton terus;
-	JComboBox makmalInput;
-	
-	private String location;
+public class AppActivity3 extends App implements ActionListener {
+	JButton meetup1, meetup2;
 	
 	public AppActivity3() {
 		// TODO Auto-generated constructor stub
 		Container pane = getContentPane();
 		
-		JLabel step2 = new JLabel("Langkah 2...");
-		pane.add(step2);
-		step2.setBounds(130, 100, 200, 30);
+		JLabel h1 = new JLabel("Pilih meetup yang ingin disunting.");
+		pane.add(h1);
+		h1.setBounds(380, 80, 250, 30);
 		
-		JLabel b1 = new JLabel("Di mana lokasi sesi anda?");
-		pane.add(b1);
-		b1.setBounds(150, 130, 250, 30);
+		meetup1 = new JButton("Pengenalan kepada Java.");
+		pane.add(meetup1);
+		meetup1.setBounds(350, 120, 250, 30);
+		meetup1.addActionListener(this);
 		
-		String makmal[] = {"mk1","mk2","mk3","mk4","mk5"};
-		makmalInput = new JComboBox(makmal);
-		pane.add(makmalInput);
-		makmalInput.setBounds(150, 160, 50, 30);
-		
-		terus = new JButton("Seterusnya");
-		pane.add(terus);
-		terus.setBounds(150, 210, 100, 30);
-		terus.addActionListener(this);
+		meetup2 = new JButton("Pengenalan kepada Swing GUI.");
+		pane.add(meetup2);
+		meetup2.setBounds(350, 170, 250, 30);
+		meetup2.addActionListener(this);
 	}
-	
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		Object obj = e.getSource();
 
 		if (obj == tetapan) {
-			
+			this.setVisible(false);
+		    new Settings().setVisible(true);
 		}
-		else if (obj == cari) {
-			
+		else if (obj == meetups) {
+			this.setVisible(true);
 		}
 		else {
-			String makmal  = (String) makmalInput.getItemAt(makmalInput.getSelectedIndex());
+			this.setVisible(false);
+		    new AppActivity4().setVisible(true);
 		}
-		 
+		  
 	}
 	
 	// for testing purpose
@@ -56,4 +48,5 @@ public class AppActivity3 extends App implements ActionListener{
 		// TODO Auto-generated method stub
 		new AppActivity3();
 	}
+
 }
