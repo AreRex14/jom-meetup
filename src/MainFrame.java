@@ -2,6 +2,8 @@ import java.awt.FlowLayout;
 import javax.swing.JFrame;
 
 public abstract class MainFrame extends JFrame{
+	String username = "student", password = "abcd@12345"; // default password
+	
 	public MainFrame() {
 		setLayout(null); // Absolute layout
 		setSize(500, 500);

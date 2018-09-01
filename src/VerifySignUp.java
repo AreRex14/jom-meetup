@@ -31,7 +31,7 @@ public class VerifySignUp extends MainFrame implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub		
 		this.setVisible(false);
-		new SignIn().setVisible(true); // VerifySignUp Form to show after SignUp window
+		// new SignIn().setVisible(true); // VerifySignUp Form to show after SignUp window
 		
 	}
 	

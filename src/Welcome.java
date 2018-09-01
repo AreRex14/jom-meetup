@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Welcome extends MainFrame implements ActionListener{
-	JButton terus;
+	private JButton terus;
 	
 	public Welcome() {
 		Container pane = getContentPane();

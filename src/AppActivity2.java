@@ -13,10 +13,15 @@ public class AppActivity2 extends App implements ActionListener {
 	private JTextArea penerangan, peraturan;
 	private JLabel lokasi;
 	
-	protected String title, organizer, location, desc, date, rules;
+	private String title, organizer, location, desc, date, rules;
+	private String inputfname, inputlname, inputmail, inputpass, inputTitle, inputOrg, inputLoc, inputDate, inputDesc, inputRules;
 	
-	public AppActivity2() {
+	public AppActivity2(String regfname, String reglname, String regEmail, String regPass) {
 		// TODO Auto-generated constructor stub
+		inputfname = regfname;
+		inputlname = reglname;
+		inputmail  = regEmail;
+		inputpass   = regPass;
 		
 		Container pane = getContentPane();
 		
@@ -104,50 +109,34 @@ public class AppActivity2 extends App implements ActionListener {
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		Object obj = e.getSource();
-
-		if (obj == terus) {
+				
+		if (obj == tetapan) {
+			this.setVisible(false);
+		    new Settings(inputfname, inputlname, inputmail, inputpass, inputTitle, inputOrg, inputLoc, inputDate, inputDesc, inputRules).setVisible(true);
+		}
+		else if (obj == meetups) {
+			this.setVisible(true);
+			new AppActivity3(inputfname, inputlname, inputmail, inputpass,  inputTitle, inputOrg, inputLoc, inputDate, inputDesc, inputRules).setVisible(true);
+		}
+		else {
 			title = tajuk.getText();
 			organizer = penganjur.getText();
 			location  = (String) makmalInput.getItemAt(makmalInput.getSelectedIndex());
 			desc = penerangan.getText();
-			
 			date = tarikh.getText();
-		    Date date1 = null;
-			try {
-				date1 = new SimpleDateFormat("dd/MM/yyyy").parse(date);
-			} catch (ParseException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}  
-		    
-		    rules = peraturan.getText();
-		    
-		    tajuk.setText(title);
-			penganjur.setText(organizer);
-			lokasi.setText(location);
-			lokasi.setBounds(100, 320, 50, 30);
-			penerangan.setText(desc);
-			date = date + "\t"+date1;
-			tarikh.setText(date);
+			rules = peraturan.getText();
 			
-			this.setVisible(false);
-		    new AppActivity4().setVisible(true);
+			this.setVisible(false);    
+			new AppActivity4(inputfname, inputlname, inputmail, inputpass, title, organizer, location, date, desc, rules).setVisible(true);
 		}
-		else if (obj == tetapan) {
-			this.setVisible(false);
-		    new Settings().setVisible(true);
-		}
-		else {
-			this.setVisible(false);
-			new AppActivity4().setVisible(true);
-		}
+			
 	}
 	
-	// for testing purpose
+	/* for testing purpose
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new AppActivity2();
 	}
+	*/
 }
